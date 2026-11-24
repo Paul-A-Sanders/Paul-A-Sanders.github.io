@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paul A. Sanders · Applied mathematics, Utrecht University</title>
+<meta name="description" content="Paul A. Sanders, PhD researcher at Utrecht University. Early warning signals for critical transitions: telling tipping points, Turing patterns and gradual versus abrupt change apart from noisy spatio-temporal data.">
+<meta property="og:title" content="Paul A. Sanders · Applied mathematics, Utrecht University">
+<meta property="og:description" content="Early warning signals for critical transitions in spatially extended systems.">
+<meta property="og:image" content="assets/paul-sanders.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f3a5f'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23f2c879' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#1c2433; --muted:#5b6475; --line:#e4dfd5; --paper:#fbf8f2; --card:#ffffff;
+    --navy:#1f3a5f; --sand:#c98b2e; --sand-soft:#f6e8cc; --maxw:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+  a{color:var(--navy);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{color:var(--sand)}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.2;margin:0}
+  h2{font-size:1.75rem;margin-bottom:1.2rem}
+  h3{font-size:1.15rem;margin-bottom:.35rem}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:56px 0;border-top:1px solid var(--line)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(251,248,242,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav .brand{font-family:Georgia,serif;font-weight:bold;color:var(--navy);text-decoration:none}
+  nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;font-size:.95rem}
+  nav ul a{text-decoration:none;color:var(--muted)}
+  nav ul a:hover{color:var(--navy)}
+
+  /* hero */
+  .hero{padding:64px 0 56px;border-top:none}
+  .hero .wrap{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:center}
+  .hero img{width:220px;height:220px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 6px 24px rgba(31,58,95,.15)}
+  .hero h1{font-size:2.6rem;margin-bottom:.4rem}
+  .role{font-size:1.15rem;color:var(--ink);margin:0 0 .2rem}
+  .affil{color:var(--muted);margin:0 0 1.2rem;font-size:.98rem}
+  .tagline{font-family:Georgia,serif;font-size:1.2rem;color:var(--navy);border-left:4px solid var(--sand);padding-left:14px;margin:0 0 1.4rem}
+  .links{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+  .links a{display:inline-block;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;font-size:.92rem;color:var(--navy)}
+  .links a:hover{border-color:var(--sand);color:var(--sand)}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+  .facts{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;font-size:.95rem}
+  .facts dt{font-weight:600;color:var(--navy);margin-top:.7rem}
+  .facts dt:first-child{margin-top:0}
+  .facts dd{margin:0;color:var(--muted)}
+
+  /* research */
+  .question{display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;margin-bottom:40px}
+  .question:last-child{margin-bottom:0}
+  .kicker{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sand);font-weight:700;margin-bottom:.3rem}
+  .question p{margin:.5rem 0}
+  .question figure{margin:0}
+  .question figure img{width:100%;border-radius:8px;border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,.06)}
+  .question figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
+  .pill{display:inline-block;font-size:.78rem;background:var(--sand-soft);color:#7a5317;padding:2px 9px;border-radius:999px;margin-right:6px}
+
+  /* publications */
+  .pubs{list-style:none;padding:0;margin:0}
+  .pubs li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+  .pubs .title{font-weight:600;color:var(--ink)}
+  .pubs .meta{color:var(--muted);font-size:.93rem}
+  .pubs .actions{margin-top:8px;display:flex;gap:14px;flex-wrap:wrap;font-size:.9rem}
+
+  /* talks */
+  .timeline{list-style:none;padding:0;margin:0}
+  .timeline li{display:grid;grid-template-columns:110px 90px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .timeline .when{color:var(--muted);font-variant-numeric:tabular-nums}
+  .tag{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 0;color:var(--navy)}
+  .tag.poster{color:var(--sand)}
+  .timeline .what{font-size:.97rem}
+  .timeline .what em{color:var(--muted)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+  .gallery a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .gallery a:hover{border-color:var(--sand)}
+  .gallery img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;object-position:top}
+  .gallery .wide img{object-fit:contain;object-position:center;background:#eef1f5}
+  .gallery span{display:block;padding:10px 14px;font-size:.88rem;border-top:1px solid var(--line)}
+  .also{margin-top:30px;font-size:.93rem;color:var(--muted)}
+
+  /* code */
+  .repo{display:flex;gap:20px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .repo svg{flex:none}
+
+  footer{padding:36px 0 48px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+
+  @media (max-width:820px){
+    nav ul{display:none}
+    .hero .wrap,.about,.question{grid-template-columns:1fr}
+    .hero img{width:160px;height:160px}
+    .hero h1{font-size:2.1rem}
+    .question figure{max-width:340px}
+    .gallery{grid-template-columns:1fr 1fr}
+    .timeline li{grid-template-columns:90px 1fr}
+    .timeline .tag{grid-column:2}
+    .timeline .what{grid-column:1 / -1}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Paul A. Sanders</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#talks">Talks &amp; posters</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img src="assets/paul-sanders.jpg" alt="Portrait of Paul Sanders">
+    <div>
+      <h1>Paul A. Sanders</h1>
+      <p class="role">PhD researcher in applied mathematics, Utrecht University</p>
+      <p class="affil">Mathematical Institute · Institute for Marine and Atmospheric research Utrecht (IMAU) · Centre for Complex Systems Studies (CCSS)</p>
+      <p class="tagline">Can we tell, from noisy data alone, not only <em>that</em> a system is about to change, but <em>how</em>?</p>
+      <ul class="links">
+        <li><a href="mailto:p.a.sanders@uu.nl">p.a.sanders@uu.nl</a></li>
+        <li><a href="https://scholar.google.com/citations?user=7K2__LQAAAAJ">Google Scholar</a></li>
+        <li><a href="https://github.com/Paul-A-Sanders">GitHub</a></li>
+        <!-- Add when available: <li><a href="https://orcid.org/XXXX-XXXX-XXXX-XXXX">ORCID</a></li> -->
+        <!-- Add when available: <li><a href="assets/cv-paul-sanders.pdf">CV (PDF)</a></li> -->
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>About</h2>
+      <p>I'm an enthusiastic PhD student who loves understanding more of the world, and I'm just as big a fan of puzzles. That combination is why I enjoy working on good mathematical problems that come from real-life systems. And when something doesn't make sense to me yet, that only hooks me more.</p>
+      <p>My PhD research is about early warning signals for critical transitions in spatially extended systems, such as dryland ecosystems. Classic early warning signals tell you that a system is losing stability. I develop methods that also tell you <em>what kind</em> of transition is coming: a collapse of the whole system, the formation of spatial patterns, or a gradual rather than an abrupt shift. I work with Robbin Bastiaansen at Utrecht University, and with Christian Kuehn and Bastian Hilder at TU Munich.</p>
+    </div>
+    <dl class="facts">
+      <dt>Now</dt>
+      <dd>PhD researcher, Utrecht University (since November 2023)</dd>
+      <dt>Research visit</dt>
+      <dd>Technical University of Munich (from November 2025)</dd>
+      <dt>Education</dt>
+      <dd>MSc Applied Physics and MSc Industrial &amp; Applied Mathematics, Eindhoven University of Technology</dd>
+      <dt>Before the PhD</dt>
+      <dd>Physical oceanography: internal tides (internship at NIOZ, Yerseke, 2022) and wave-induced drift (MSc thesis, 2023)</dd>
+      <dt>Tools</dt>
+      <dd>MATLAB, Python, Mathematica, R</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+
+    <div class="question">
+      <div>
+        <div class="kicker">Question 1</div>
+        <h3>Tipping point or spatial pattern?</h3>
+        <p>When environmental conditions get worse, a spatially extended system can lose stability in two different ways. It can tip as a whole, or a spatial mode can destabilise first so that patterns form, which may let the system avoid collapse. Standard early warning signals, such as rising variance, look the same in both cases.</p>
+        <p>We fit a linear stability model directly to noisy spatio-temporal data and use it to estimate the dispersion relation λ(k). The wavenumber that destabilises first tells the two routes apart: k = 0 for tipping, k &gt; 0 for a Turing instability. The method works under changing conditions and needs little prior knowledge of the system.</p>
+        <p><span class="pill">Physica D, 2026</span><a href="#publications">Paper</a> · <a href="assets/poster-2026-tipping-vs-turing.pptx">Poster</a> · <a href="assets/talk-dde2026-slides.pptm">Slides</a></p>
+      </div>
+      <figure>
+        <a href="assets/poster-2026-tipping-vs-turing.pptx"><img src="assets/poster-2026-tipping-vs-turing.jpg" alt="Poster: distinguishing tipping points from Turing destabilizations"></a>
+        <figcaption>Poster (2026). Click to download (PowerPoint).</figcaption>
+      </figure>
+    </div>
+
+    <div class="question">
+      <div>
+        <div class="kicker">Question 2</div>
+        <h3>Gradual or abrupt change?</h3>
+        <p>A bifurcation can be supercritical, where the system moves smoothly to a nearby new state, or subcritical, where it jumps somewhere far away. Knowing which one is coming matters enormously, but most early warning methods are blind to it.</p>
+        <p>We extend a regression-based stability method with the leading cubic term and use its sign to classify the bifurcation, tested on a stochastic pitchfork model and the stochastic Swift–Hohenberg equation. Classification improves with longer observations, closeness to the bifurcation, stronger noise and stronger nonlinearity. But those same conditions raise the risk of noise-induced tipping in the subcritical case, so there is a real trade-off in when a warning is useful. In spatial systems, observing the full field allows much shorter observation windows.</p>
+        <p><span class="pill">Preprint, 2026</span><a href="https://arxiv.org/abs/2610.38866">arXiv</a> · <a href="https://github.com/Paul-A-Sanders/Criticality_classification">Code</a></p>
+      </div>
+    </div>
+
+    <div class="question">
+      <div>
+        <div class="kicker">Now</div>
+        <h3>What does heterogeneity change?</h3>
+        <p>Real landscapes are never uniform. I'm currently studying how spatial heterogeneity in the environment affects these early warnings, and which of their conclusions survive it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+    <ol class="pubs" reversed>
+      <li>
+        <div class="title">Early warning of critical transitions: Distinguishing supercritical and subcritical bifurcations from noisy observations</div>
+        <div class="meta"><strong>P. A. Sanders</strong>, C. Kuehn, B. Hilder, R. Bastiaansen · Preprint, 2026</div>
+        <div class="actions"><a href="https://arxiv.org/abs/2610.38866">arXiv:2610.38866</a><a href="https://github.com/Paul-A-Sanders/Criticality_classification">Code &amp; data</a></div>
+      </li>
+      <li>
+        <div class="title">Early warning of critical transitions: Distinguishing tipping points from Turing destabilizations</div>
+        <div class="meta"><strong>P. A. Sanders</strong>, R. Bastiaansen · <em>Physica D: Nonlinear Phenomena</em> 495, 135300 (2026)</div>
+        <div class="actions"><a href="https://www.sciencedirect.com/science/article/pii/S016727892600196X">Journal</a><a href="https://arxiv.org/abs/2510.01959">arXiv:2510.01959</a></div>
+      </li>
+      <li>
+        <div class="title">The effect of the Earth's rotation on wave-induced drift in finite-depth water: The role of unsteadiness</div>
+        <div class="meta">J. Mol, J. J. M. Slot, <strong>P. A. Sanders</strong>, M. Duran-Matute, T. S. van den Bremer · <em>Journal of Geophysical Research: Oceans</em> 131(7), e2026JC024014 (2026)</div>
+        <div class="actions"><a href="https://doi.org/10.1029/2026JC024014">doi:10.1029/2026JC024014</a><span style="color:var(--muted)">Code: 4TU.ResearchData</span></div>
+      </li>
+      <li>
+        <div class="title">Note on the beam structure in step-trapped internal tides</div>
+        <div class="meta"><strong>P. A. Sanders</strong>, M. D. Dorrestijn, T. Gerkema · <em>Journal of Physical Oceanography</em> 54(3), 871–875 (2024)</div>
+        <div class="actions"><a href="https://doi.org/10.1175/JPO-D-23-0084.1">doi:10.1175/JPO-D-23-0084.1</a></div>
+      </li>
+      <li>
+        <div class="title">Analysis of surface-wave generated Ekman–Stokes flow in oceans</div>
+        <div class="meta"><strong>P. A. Sanders</strong> · MSc thesis, Eindhoven University of Technology (2023)</div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="talks">
+  <div class="wrap">
+    <h2>Talks &amp; posters</h2>
+    <!-- To add an entry, copy one <li> block. Tag class: "tag" for talks, "tag poster" for posters. -->
+    <ul class="timeline">
+      <li>
+        <span class="when">Jul 2026</span><span class="tag">Talk</span>
+        <span class="what">Early warning of critical transitions: distinguishing tipping points from Turing patterns<br><em>Dynamics Days Europe 2026, Lisbon (minisymposium)</em> · <a href="assets/talk-dde2026-slides.pptm">slides</a></span>
+      </li>
+      <li>
+        <span class="when">Mar 2026</span><span class="tag">Seminar</span>
+        <span class="what">Early warning of critical transitions: distinguishing tipping points from Turing patterns<br><em>Dynamical Systems Seminar, Leiden University</em></span>
+      </li>
+      <li>
+        <span class="when">Jan 2026</span><span class="tag poster">Poster</span>
+        <span class="what">Navigating early warning signals: bridging gaps with spatial coherence<br><em>MoDiS 2026, Erwin Schrödinger Institute, Vienna</em> · <a href="assets/poster-2024-spatial-coherence.pdf">poster</a></span>
+      </li>
+      <li>
+        <span class="when">Apr 2024</span><span class="tag poster">Poster</span>
+        <span class="what">Navigating early warning signals: bridging gaps with spatial coherence<br><em>808th WE-Heraeus Seminar “Extreme Events: Identification, Analysis and Prediction”, Bad Honnef</em> · <a href="assets/poster-2024-spatial-coherence.pdf">poster</a></span>
+      </li>
+    </ul>
+
+    <div class="gallery">
+      <a href="assets/poster-2026-tipping-vs-turing.pptx"><img src="assets/poster-2026-tipping-vs-turing.jpg" alt="Poster 2026" loading="lazy"><span>Poster · Distinguishing tipping points from Turing destabilizations (2026)</span></a>
+      <a href="assets/poster-2024-spatial-coherence.pdf"><img src="assets/poster-2024-spatial-coherence.jpg" alt="Poster 2024" loading="lazy"><span>Poster · Navigating early warning signals (2024)</span></a>
+      <a class="wide" href="assets/talk-dde2026-slides.pptm"><img src="assets/talk-dde2026-title.jpg" alt="Talk slides" loading="lazy"><span>Slides · Dynamics Days Europe 2026</span></a>
+    </div>
+
+    <p class="also"><strong>Also took part in:</strong> Mathematical Approaches to Spatial Biology (Durham, 2026) · The Mathematics of Climate Tipping Points and their Impacts (ICMS Edinburgh, 2025) · Study Group Mathematics with Industry (SWI 2025, Utrecht) · NDNS+ workshops (2024–2026) · BBOS Autumn Symposia (2024, 2025)</p>
+  </div>
+</section>
+
+<section id="code">
+  <div class="wrap">
+    <h2>Code</h2>
+    <div class="repo">
+      <svg width="34" height="34" viewBox="0 0 16 16" aria-hidden="true"><path fill="#1f3a5f" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <div>
+        <h3><a href="https://github.com/Paul-A-Sanders/Criticality_classification">Criticality_classification</a></h3>
+        <p style="margin:.3rem 0 0">MATLAB code and data for classifying supercritical and subcritical bifurcations from noisy observations, in a stochastic pitchfork model and the stochastic Swift–Hohenberg equation. It reproduces the figures of the 2026 preprint.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>I'm always happy to talk about early warning signals, pattern formation, or a good puzzle. Email me at <a href="mailto:p.a.sanders@uu.nl">p.a.sanders@uu.nl</a>.</p>
+    <p style="color:var(--muted);font-size:.95rem">Mathematical Institute, Utrecht University, Utrecht, The Netherlands</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Paul A. Sanders · Last updated November 2026</div>
+</footer>
+
+</body>
+</html>
