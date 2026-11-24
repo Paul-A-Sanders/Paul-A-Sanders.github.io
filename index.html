@@ -54,6 +54,10 @@
   .facts dd{margin:0;color:var(--muted)}
 
   /* research */
+  .sub{font-size:1.35rem;margin:.4rem 0 .8rem}
+  .goals{margin:0 0 2.2rem;padding-left:1.2rem;max-width:760px}
+  .goals li{margin-bottom:.25rem}
+  .masters{margin-top:3rem;padding-top:2rem;border-top:1px dashed var(--line)}
   .question{display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start;margin-bottom:40px}
   .question:last-child{margin-bottom:0}
   .kicker{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sand);font-weight:700;margin-bottom:.3rem}
@@ -61,6 +65,9 @@
   .question figure{margin:0}
   .question figure img{width:100%;border-radius:8px;border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,.06)}
   .question figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
+  .future-title{margin:8px 0 14px}
+  .future{margin:0;padding-left:1.2rem;max-width:820px}
+  .future li{margin-bottom:.6rem}
   .pill{display:inline-block;font-size:.78rem;background:var(--sand-soft);color:#7a5317;padding:2px 9px;border-radius:999px;margin-right:6px}
 
   /* publications */
@@ -112,7 +119,7 @@
     <a class="brand" href="#top">Paul A. Sanders</a>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
+      <li><a href="#research">Research topics</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#talks">Talks &amp; posters</a></li>
       <li><a href="#code">Code</a></li>
@@ -128,7 +135,7 @@
       <h1>Paul A. Sanders</h1>
       <p class="role">PhD researcher in applied mathematics, Utrecht University</p>
       <p class="affil">Mathematical Institute · Institute for Marine and Atmospheric research Utrecht (IMAU) · Centre for Complex Systems Studies (CCSS)</p>
-      <p class="tagline">Can we tell, from noisy data alone, not only <em>that</em> a system is about to change, but <em>how</em>?</p>
+      <p class="tagline">Early warnings that don't just sound the alarm: they tell you what kind of transition a spatial system is heading for, and when.</p>
       <ul class="links">
         <li><a href="mailto:p.a.sanders@uu.nl">p.a.sanders@uu.nl</a></li>
         <li><a href="https://scholar.google.com/citations?user=7K2__LQAAAAJ">Google Scholar</a></li>
@@ -144,8 +151,8 @@
   <div class="wrap about">
     <div>
       <h2>About</h2>
-      <p>I'm an enthusiastic PhD student who loves understanding more of the world, and I'm just as big a fan of puzzles. That combination is why I enjoy working on good mathematical problems that come from real-life systems. And when something doesn't make sense to me yet, that only hooks me more.</p>
-      <p>My PhD research is about early warning signals for critical transitions in spatially extended systems, such as dryland ecosystems. Classic early warning signals tell you that a system is losing stability. I develop methods that also tell you <em>what kind</em> of transition is coming: a collapse of the whole system, the formation of spatial patterns, or a gradual rather than an abrupt shift. I work with Robbin Bastiaansen at Utrecht University, and with Christian Kuehn and Bastian Hilder at TU Munich.</p>
+      <p>I'm always eager to understand a bit more of how the world works, and solving puzzles is one of my biggest passions. So what better way to combine the two than mathematics? I love taking a real-life system, turning it into a mathematical puzzle and working out what makes it tick. And the less I understand at first, the more hooked I get.</p>
+      <p>My current puzzle, and the topic of my PhD, is early warning signals for critical transitions in spatially extended systems, such as dryland ecosystems. Classic early warning signals tell you that a system is losing stability. I develop methods that also tell you <em>what kind</em> of transition is coming: a collapse of the whole system, the formation of spatial patterns, or a gradual rather than an abrupt shift. I work on these topics my supervisor Robbin Bastiaansen at Utrecht University.</p>
     </div>
     <dl class="facts">
       <dt>Now</dt>
@@ -164,7 +171,14 @@
 
 <section id="research">
   <div class="wrap">
-    <h2>Research</h2>
+    <h2>Research topics</h2>
+
+    <h3 class="sub">PhD research: a more detailed early warning method</h3>
+    <ul class="goals">
+      <li><strong>Simple to apply</strong> directly to data.</li>
+      <li>Needs <strong>little background information</strong> about the system.</li>
+      <li>Able to <strong>distinguish</strong> between different kinds of spatial and homogeneous collapse.</li>
+    </ul>
 
     <div class="question">
       <div>
@@ -172,7 +186,7 @@
         <h3>Tipping point or spatial pattern?</h3>
         <p>When environmental conditions get worse, a spatially extended system can lose stability in two different ways. It can tip as a whole, or a spatial mode can destabilise first so that patterns form, which may let the system avoid collapse. Standard early warning signals, such as rising variance, look the same in both cases.</p>
         <p>We fit a linear stability model directly to noisy spatio-temporal data and use it to estimate the dispersion relation λ(k). The wavenumber that destabilises first tells the two routes apart: k = 0 for tipping, k &gt; 0 for a Turing instability. The method works under changing conditions and needs little prior knowledge of the system.</p>
-        <p><span class="pill">Physica D, 2026</span><a href="#publications">Paper</a> · <a href="assets/poster-2026-tipping-vs-turing.pptx">Poster</a> · <a href="assets/talk-dde2026-slides.pptm">Slides</a></p>
+        <p><span class="pill">Physica D, 2026</span><a href="#publications">Paper</a> · <a href="https://github.com/Paul-A-Sanders/Stability_Analysis_RD">Code</a> · <a href="assets/poster-2026-tipping-vs-turing.pptx">Poster</a> · <a href="assets/talk-dde2026-slides.pptm">Slides</a></p>
       </div>
       <figure>
         <a href="assets/poster-2026-tipping-vs-turing.pptx"><img src="assets/poster-2026-tipping-vs-turing.jpg" alt="Poster: distinguishing tipping points from Turing destabilizations"></a>
@@ -192,9 +206,44 @@
 
     <div class="question">
       <div>
-        <div class="kicker">Now</div>
+        <div class="kicker">Question 3 · now</div>
         <h3>What does heterogeneity change?</h3>
-        <p>Real landscapes are never uniform. I'm currently studying how spatial heterogeneity in the environment affects these early warnings, and which of their conclusions survive it.</p>
+        <p>Real landscapes are never uniform. How does spatial heterogeneity in the environment change these early warnings, and which of their conclusions survive it?</p>
+      </div>
+    </div>
+
+    <div class="question">
+      <div>
+        <div class="kicker">Question 4 · now</div>
+        <h3>What happens at resonance?</h3>
+        <p>Sometimes several spatial modes lose stability at the same time, and they can interact through resonance. Can we detect that from data, and what does it mean for the transition that follows?</p>
+      </div>
+    </div>
+
+    <h3 class="future-title">Future questions</h3>
+    <ul class="future">
+      <li><strong>How far away is the transition?</strong> Can we estimate the bifurcation path, and with it the time left before the system destabilises?</li>
+      <li><strong>What changes for travelling waves?</strong> Many patterns in nature move. How do these methods carry over to travelling waves?</li>
+      <li><strong>Ready for real data?</strong> Where do these methods reach their limits on real observations, and what do you need to take into account when applying them?</li>
+      <li><strong>One method for everything?</strong> Can we build a single robust framework that answers all these questions at once, for both spatial and non-spatial systems?</li>
+    </ul>
+
+    <div class="masters">
+      <h3 class="sub">Master's research: physical oceanography</h3>
+      <p style="max-width:820px">Before my PhD, I worked on ocean dynamics from a mathematical, analytical angle.</p>
+      <div class="question" style="margin-bottom:24px">
+        <div>
+          <h3>Internal tides over a step in the sea floor</h3>
+          <p>During an internship at NIOZ, I studied how internal tides trapped over a step in the ocean floor form beams, and what sets their structure.</p>
+          <p><span class="pill">J. Phys. Oceanogr., 2024</span><a href="https://doi.org/10.1175/JPO-D-23-0084.1">Paper</a></p>
+        </div>
+      </div>
+      <div class="question" style="margin-bottom:0">
+        <div>
+          <h3>Wave-induced drift on a rotating Earth</h3>
+          <p>Surface waves push floating material, such as plastic, along with the Stokes drift, but the Earth's rotation drives a counteracting Ekman–Stokes flow. My MSc thesis analysed this flow. It grew into a paper on how water depth and changing wave conditions affect the drift, including inertial oscillations that die out faster in finite-depth water.</p>
+          <p><span class="pill">J. Geophys. Res. Oceans, 2026</span><a href="https://doi.org/10.1029/2026JC024014">Paper</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -212,7 +261,7 @@
       <li>
         <div class="title">Early warning of critical transitions: Distinguishing tipping points from Turing destabilizations</div>
         <div class="meta"><strong>P. A. Sanders</strong>, R. Bastiaansen · <em>Physica D: Nonlinear Phenomena</em> 495, 135300 (2026)</div>
-        <div class="actions"><a href="https://www.sciencedirect.com/science/article/pii/S016727892600196X">Journal</a><a href="https://arxiv.org/abs/2510.01959">arXiv:2510.01959</a></div>
+        <div class="actions"><a href="https://www.sciencedirect.com/science/article/pii/S016727892600196X">Journal</a><a href="https://arxiv.org/abs/2510.01959">arXiv:2510.01959</a><a href="https://github.com/Paul-A-Sanders/Stability_Analysis_RD">Code</a></div>
       </li>
       <li>
         <div class="title">The effect of the Earth's rotation on wave-induced drift in finite-depth water: The role of unsteadiness</div>
@@ -295,6 +344,8 @@
     <div class="repo">
       <svg width="34" height="34" viewBox="0 0 16 16" aria-hidden="true"><path fill="#1f3a5f" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       <div>
+        <h3><a href="https://github.com/Paul-A-Sanders/Stability_Analysis_RD">Stability_Analysis_RD</a></h3>
+        <p style="margin:.3rem 0 1.1rem">Code for estimating dispersion relations from noisy spatio-temporal data, to tell tipping points from Turing destabilizations (Physica D, 2026).</p>
         <h3><a href="https://github.com/Paul-A-Sanders/Criticality_classification">Criticality_classification</a></h3>
         <p style="margin:.3rem 0 0">MATLAB code and data for classifying supercritical and subcritical bifurcations from noisy observations, in a stochastic pitchfork model and the stochastic Swift–Hohenberg equation. It reproduces the figures of the 2026 preprint.</p>
       </div>
@@ -306,7 +357,7 @@
   <div class="wrap">
     <h2>Contact</h2>
     <p>My interests go well beyond my current projects. I enjoy any problem with an interesting theoretical analysis behind it: dynamical systems, perturbation theory, amplitude equations, stochastic dynamics, spatial pattern formation, and anything else where a good piece of mathematics explains what a real system does.</p>
-    <p>I'm open to collaborations. If you're working on something similar to my research, want to apply these methods to your own system or data, or simply have a question or idea you'd like to discuss, I'd be glad to hear from you at <a href="mailto:p.a.sanders@uu.nl">p.a.sanders@uu.nl</a>.</p>
+    <p>I'm open to and keen on collaborations, so don't hesitate to send me a message. That can be anything from a question about my work or an idea for a joint project to applying these methods to your own system or data. Just send an email to <a href="mailto:p.a.sanders@uu.nl">p.a.sanders@uu.nl</a>.</p>
     <p style="color:var(--muted);font-size:.95rem">Mathematical Institute, Utrecht University, Utrecht, The Netherlands</p>
   </div>
 </section>
